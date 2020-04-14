@@ -8,3 +8,9 @@ useNewUrlParser: true,
 .catch(error => {
     console.log(Error, error.message);
 });
+
+
+const Ticket = require("../data.models/ticket");
+const User = require("../data.models/user");
+const Flight = require("../data.models/flight");
+module.exports = {Ticket, User, Flight};

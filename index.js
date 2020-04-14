@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 // create connection
 const connection = require('./models/connection');
 const TicketController = require('./controllers/ticket.controller.js');
+const AdminController = require('./controllers/admin.controller');
 
 // create express app
 const app = express();
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 
 // base package
 app.use("/api", TicketController);
+app.use("/api", AdminController);
 
 
 // listen for requests

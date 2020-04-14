@@ -1,0 +1,23 @@
+**USER STORIES**
+
+Participants 
+
+Admin : Admin manages various features from the server
+Customer : Customer resides on the client side to be assigned ticket
+
+Features :
+
+1. As an Admin I want to update ticket status (open / close)
+
+2. As an Admin I want to update customer details owning the ticket
+
+3. As an Admin I want to view ticket status (open / closed)
+
+4. As an Admin I want to view all closed tickets
+
+5. As an Admin I want to view all open tickets
+
+6. As an Admin I want to view customer details owning the ticket
+
+7. As an Admin I want to reset the server (opens up all the tickets)
+

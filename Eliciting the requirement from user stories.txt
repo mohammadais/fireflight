@@ -1,0 +1,17 @@
+**ELICITING THE REQUIREMENT FROM USER STORIES**
+
+Features 
+
+1. Admin can update the ticket status (open / close) with ticket number and ticket status provided
+
+2. Admin can update customer details owning the ticket with ticket number
+
+3. Admin can view ticket status with ticket number
+
+4. Admin can view all closed tickets 
+
+5. Admin can view all open tickets 
+
+6. Admin can view customer details owning the ticket with ticket number
+
+7. Admin can reset the server so that all the tickets are open 

@@ -5,9 +5,6 @@ var FlightSchema = new mongoose.Schema({
     flightNumber: {
         type: String
     },
-    ticketNumber: {
-        type: String
-    },
     seatsAvailable: {
         type: Number,
         default: 40
@@ -21,18 +18,6 @@ var FlightSchema = new mongoose.Schema({
     },
     flightDestination: {
         type: String
-    },
-    onwardDate: {
-        type: Date
-    },
-    seatAvailable: {
-        type: Number
-    },
-    hasWifi: {
-        type: Boolean
-    },
-    hasCharger: {
-        type: Boolean
     }
 });
 module.exports = mongoose.model("flights", FlightSchema);

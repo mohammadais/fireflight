@@ -1,7 +1,7 @@
 // this file creates connection
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/firebus", {
+mongoose.connect("mongodb://localhost:27017/fireflight", {
 useUnifiedTopology: true,
 useNewUrlParser: true,
 }).then(() => console.log('DB Connected!'))

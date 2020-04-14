@@ -4,6 +4,10 @@ var TicketSchema = new mongoose.Schema({
     ticketNumber: {
         type: String,
         required: 'required'
+    },
+    userId: {
+        type: String,
+        required: 'required'
     },  
     ticketStatus : {
         type: String,
@@ -17,10 +21,6 @@ var TicketSchema = new mongoose.Schema({
     createdOn : {
         type: Date,
         default: Date.now()
-    },
-    userId: {
-        type: String,
-        required: 'required'
     },
     seatNumber: {
         type: Number

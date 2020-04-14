@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 // create connection
 const connection = require('./models/connection');
-
+const TicketController = require('./controllers/ticket.controller.js');
 
 // create express app
 const app = express();
@@ -19,6 +19,10 @@ app.use(bodyParser.json());
 app.get("/", (req, res) => { 
     res.send("Success");
 });
+
+// base package
+app.use("/api", TicketController);
+
 
 // listen for requests
 app.listen("3000", () => {

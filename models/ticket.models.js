@@ -52,7 +52,7 @@ Ticket.viewStatus = (req, res) => {
 
 
 // // Get all closed Tickets
-Ticket.getInActiveTickets = (req, res) => {
+Ticket.getCloseTickets = (req, res) => {
 
     TicketModel.find({ticketStatus: 'close'}, (error, closedTickets) => {
         if (!error){            
@@ -103,7 +103,7 @@ Ticket.getUserDetails = (req, res) => {
 
 
 // Get all open Tickets
-Ticket.getActiveTickets = (req, res) => {
+Ticket.getOpenTickets = (req, res) => {
     TicketModel.find({ticketStatus: 'open'}, (error, openTickets) => {
         if (!error){            
             res.send(openTickets);

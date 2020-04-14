@@ -10,12 +10,12 @@ router.put("/tickets", Ticket.updateTicketStatus);
 router.post("/tickets", Ticket.viewStatus);
 
 
-// Get all inActive/close Tickets
-router.get("/tickets/close", Ticket.getInActiveTickets);
+// Get all close Tickets
+router.get("/tickets/close", Ticket.getCloseTickets);
 
 
-// Get all active/open Tickets
-router.get("/tickets/open", Ticket.getActiveTickets);
+// Get all open Tickets
+router.get("/tickets/open", Ticket.getOpenTickets);
 
 
 // Get all tickets

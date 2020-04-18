@@ -7,7 +7,7 @@ const Admin = {};
 
 Admin.resetAllTickets = (req, res) => {
 
-    // change all the open tickets to close
+    // change all the close tickets to open
     TicketModel.updateMany({busNumber: req.body.busNumber , ticketStatus: 'close'}, {ticketStatus: 'open'}, (error, message) => {
         if (!error){
             // reset available seats 

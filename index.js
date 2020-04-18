@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 
 // create connection
 const connection = require('./models/connection');
-const TicketController = require('./controllers/ticket.controller.js');
+const TicketController = require('./controllers/ticket.controller');
 const AdminController = require('./controllers/admin.controller');
 
 // create express app
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 // define a simple route
 app.get("/", (req, res) => { 
-    res.send("Success");
+    res.send("Server started");
 });
 
 // base package

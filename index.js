@@ -16,9 +16,12 @@ app.use(bodyParser.urlencoded({
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
 
+
+app.set('view engine', 'ejs');
+
 // define a simple route
 app.get("/", (req, res) => { 
-    res.send("Server started");
+    res.render("index");
 });
 
 // base package

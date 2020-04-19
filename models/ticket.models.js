@@ -15,7 +15,7 @@ Ticket.updateTicketStatus = (req, res) => {
             message: "Id can not be empty"
         });
     }
-    // if ticket status is not int request
+    // if ticket status is not in request
     if(!req.body.ticketStatus) {
         return res.status(400).send({
             message: "Ticket status can not be empty"

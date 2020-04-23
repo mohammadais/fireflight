@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const expressLayouts = require('express-ejs-layouts');
 
 // create connection
-const connection = require('./models/connection');
+const connection = require('./config/connection');
 const TicketController = require('./controllers/ticket.controller');
 const AdminController = require('./controllers/admin.controller');
+const UserController = require('./controllers/user.controller');
 
 // create express app
 const app = express();
@@ -17,6 +19,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
+app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
 // define a simple route
@@ -25,8 +28,9 @@ app.get("/", (req, res) => {
 });
 
 // base package
-app.use("/api", TicketController);
-app.use("/api", AdminController);
+app.use("/api/tickets", TicketController);
+app.use("/api/admin", AdminController);
+app.use("/api/user", UserController);
 
 
 // listen for requests

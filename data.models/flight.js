@@ -6,18 +6,19 @@ var FlightSchema = new mongoose.Schema({
         type: String
     },
     seatsAvailable: {
-        type: Number,
-        default: 40
+        type: Number
     },
     totalSeats: {
-        type: Number,
-        default: 40
+        type: Number
     },
     flightSource: {
         type: String
     },
     flightDestination: {
         type: String
+    },
+    time: {
+        type: Date
     }
 });
 module.exports = mongoose.model("flights", FlightSchema);

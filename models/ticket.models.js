@@ -3,7 +3,6 @@ const TicketModel = mongoose.model('tickets');
 const UserModel = mongoose.model('users');
 const FlightModel = mongoose.model('flights');
 
-
 const Ticket = {};
 
 // update ticket status
@@ -201,6 +200,5 @@ Ticket.createTicket = (req, res) => {
         }
     });
 }
-
 
 module.exports = Ticket;

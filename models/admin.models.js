@@ -5,6 +5,71 @@ const UserModel = mongoose.model('users');
 
 const Admin = {};
 
+// create new user
+Admin.createUser = (req, res) => {
+
+    // validate request
+    if(!req.body) {
+        return res.status(400).send({
+            message: "user details not given"
+        });
+    }
+
+    UserModel.countDocuments({}, (error, totalUsers) => {
+        if (!error){
+
+            var newUser = new UserModel();
+            newUser.userId = totalUsers + 1;
+            newUser.userName = req.body.userName;
+            newUser.userContact = req.body.userContact;
+            newUser.userAddress = req.body.userAddress;
+            newUser.save((error, data) => {
+                if (!error) {
+                    res.send("Your user ID is : " + newUser.userId);
+                } else {
+                    res.status("can not save details").send(error);
+                }
+            });
+
+        } else {
+            res.send('cannot add user');
+        }
+    });
+
+
+}
+
+
+// create new flight
+Admin.createFlight = (req, res) => {
+
+    // validate request
+    if(!req.body) {
+        return res.status(400).send({
+            message: "user details not given"
+        });
+    }
+
+    FlightModel.countDocuments({}, (error, totalFlights) => {
+
+        var newFlight = new FlightModel();
+        newFlight.flightNumber = totalFlights + 1;
+        newFlight.totalSeats = req.body.totalSeats;
+        newFlight.seatsAvailable = req.body.totalSeats;
+        newFlight.flightSource = req.body.flightSource;
+        newFlight.flightDestination = req.body.flightDestination;
+        newFlight.save((error, data) => {
+            if (!error) {
+                res.send("Flight number is : " + newFlight.flightNumber);
+            } else {
+                res.send(error);
+            }
+        });
+    });
+}
+
+
+// reset all tickets
 Admin.resetAllTickets = (req, res) => {
 
     // change all the close tickets to open
@@ -22,12 +87,11 @@ Admin.resetAllTickets = (req, res) => {
         } else {
             res.send(error);
         }
-    });
-    
+    }); 
 }
 
-
-Admin.addUserDetails = (req, res) => (
+// update user details
+Admin.addUserDetails = (req, res) => {
 
     TicketModel.findOne({ticketNumber: req.body.ticketNumber}, (error, user) => {
 
@@ -55,7 +119,7 @@ Admin.addUserDetails = (req, res) => (
         } else {
             res.send(error);
         }
-    })
-)
+    });
+}
 
 module.exports = Admin;

@@ -3,29 +3,29 @@ const router = express.Router();
 const Ticket = require('../models/ticket.models.js');
 
 // update ticket status with ticketNumber
-router.put("/tickets", Ticket.updateTicketStatus);
+router.put("/update-ticket-status", Ticket.updateTicketStatus);
 
 
 // Get ticket status with TicketNumber
-router.post("/tickets", Ticket.viewStatus);
+router.post("/view-status", Ticket.viewStatus);
 
 
 // Get all close Tickets
-router.get("/tickets/close", Ticket.getCloseTickets);
+router.get("/get-close-tickets", Ticket.getCloseTickets);
 
 
 // Get all open Tickets
-router.get("/tickets/open", Ticket.getOpenTickets);
+router.get("/get-open-tickets", Ticket.getOpenTickets);
 
 
 // Get all tickets
-router.get("/tickets", Ticket.getAll);
+router.get("/", Ticket.getAll);
 
 
 // Get user details owning the ticket with ticketNumber
-router.post("/tickets/details", Ticket.getUserDetails);
+router.post("/get-user-details", Ticket.getUserDetails);
 
 // create ticket
-router.post("/tickets/create", Ticket.createTicket);
+router.post("/create-ticket", Ticket.createTicket);
 
 module.exports = router;

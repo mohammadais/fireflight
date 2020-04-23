@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 var TicketSchema = new mongoose.Schema({
     ticketNumber: {
-        type: String,
-        required: 'required'
+        type: String
     },
     userId: {
         type: String,
@@ -16,7 +15,9 @@ var TicketSchema = new mongoose.Schema({
     flightNumber: {
         type: String,
         required: 'required'
-
+    },
+    flightName: {
+        type: String
     },
     createdOn : {
         type: Date,
@@ -27,6 +28,17 @@ var TicketSchema = new mongoose.Schema({
     },
     flightFare: {
         type: Number
+    },
+    travelClass: {
+        type: String
+    },
+    noOfAdults: {
+        type: Number,
+        default: 1
+    },
+    noOfChildren: {
+        type: Number,
+        default: 0
     }
 });
 
